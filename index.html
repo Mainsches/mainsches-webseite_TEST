@@ -12,15 +12,51 @@
   <header class="site-header">
     <div class="header-inner">
       <p class="logo">Mainsches Test Website</p>
+      <nav class="header-nav" aria-label="Seitennavigation">
+        <a href="#scope-discovery">Scope Discovery</a>
+        <a href="#features">Leistungen</a>
+      </nav>
     </div>
   </header>
   <main id="inhalt">
     <section class="hero" aria-labelledby="hero-title">
-      <p class="eyebrow">Premium‑Auftritt</p>
-      <h1 id="hero-title">Mainsches Hub — Engineer Patch Verified</h1>
-      <p class="hero-lead">Cursor baut, Hub prüft, Local Agent schreibt kontrolliert.</p>
-      <a class="cta-button" href="#features">Jetzt Projekt starten</a>
-      <p class="execution-note">Laufzeit synchron · Prüfpfad stabil · Änderungen begrenzt</p>
+      <p class="eyebrow">Scope Discovery v1</p>
+      <h1 id="hero-title">Mainsches Hub — Landing Page Scope Discovery</h1>
+      <p class="hero-lead">Der Hub sammelt Modify-, Context- und Protected-Buckets, bevor ein Local Agent eine Vorschau erhält.</p>
+      <a class="cta-button" href="#scope-discovery">Discovery ansehen</a>
+      <p class="execution-note">Human Approval zuerst · intendedFiles explizit · Schreibpfad gesperrt</p>
+    </section>
+    <section class="scope-discovery" id="scope-discovery" aria-labelledby="scope-title">
+      <p class="section-kicker">Accepted Scope</p>
+      <h2 id="scope-title">Discovery-Buckets für diese Landing Page</h2>
+      <p class="scope-intro">Die Erstaufnahme trennt Dateien nach geplanter Änderung, reinem Kontext und Schutzstatus, damit der Preview-Lauf eindeutig begrenzt bleibt.</p>
+      <div class="scope-grid">
+        <article class="scope-card scope-card-allowed">
+          <h3>Modify Candidates</h3>
+          <ul>
+            <li><code>index.html</code> — Struktur, Inhalte und sichtbare Discovery-Buckets.</li>
+            <li><code>styles.css</code> — Layout, Karten, Statusfarben und responsive Zustände.</li>
+          </ul>
+        </article>
+        <article class="scope-card">
+          <h3>Context Only</h3>
+          <ul>
+            <li><code>README.md</code> — Projektbeschreibung zur Orientierung; bleibt unverändert.</li>
+          </ul>
+        </article>
+        <article class="scope-card scope-card-locked">
+          <h3>Protected</h3>
+          <ul>
+            <li><code>agent-test.txt</code> — ausgeschlossen und nicht Teil eines Preview- oder Write-Laufs.</li>
+          </ul>
+        </article>
+      </div>
+      <ol class="discovery-steps" aria-label="Scope Discovery Ablauf">
+        <li><span>1</span><p><strong>Scope approval:</strong> Der Nutzer bestätigt die erlaubten Modify-Dateien, bevor eine Vorschau startet.</p></li>
+        <li><span>2</span><p><strong>Explicit handoff:</strong> Der Local Agent erhält nur die freigegebenen <code>intendedFiles</code>.</p></li>
+        <li><span>3</span><p><strong>Dry-run first:</strong> Jede Änderung bleibt Preview, bis der Hub den Lauf verifiziert.</p></li>
+      </ol>
+      <p class="scope-risk">Hinweis: Diese Discovery ist heuristisch; für höhere Sicherheit sollte ein Analyst-Lauf folgen.</p>
     </section>
     <section class="features" id="features" aria-labelledby="features-title">
       <h2 id="features-title">Leistungen &amp; Vorteile</h2>
