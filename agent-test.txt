@@ -1,0 +1,4 @@
+alpha
+ANCHOR_LINE
+Omega
+DONE_LINE
