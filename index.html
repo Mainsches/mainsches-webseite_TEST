@@ -22,26 +22,26 @@
     <section class="hero" aria-labelledby="hero-title">
       <p class="eyebrow">Scope Discovery v1</p>
       <h1 id="hero-title">Mainsches Hub — Landing Page Scope Discovery</h1>
-      <p class="hero-lead">Der Hub sammelt Modify-, Context- und Protected-Buckets, bevor ein Local Agent eine Vorschau erhält.</p>
+      <p class="hero-lead">Der Hub startet eine Scope Discovery: Modify-, Context- und Protected-Buckets werden sichtbar getrennt, bevor ein Local Agent eine Vorschau erhält.</p>
       <a class="cta-button" href="#scope-discovery">Discovery ansehen</a>
       <p class="execution-note">Human Approval zuerst · intendedFiles explizit · Schreibpfad gesperrt</p>
     </section>
     <section class="scope-discovery" id="scope-discovery" aria-labelledby="scope-title">
       <p class="section-kicker">Accepted Scope</p>
       <h2 id="scope-title">Discovery-Buckets für diese Landing Page</h2>
-      <p class="scope-intro">Die Erstaufnahme trennt Dateien nach geplanter Änderung, reinem Kontext und Schutzstatus, damit der Preview-Lauf eindeutig begrenzt bleibt.</p>
+      <p class="scope-intro">Die Erstaufnahme trennt Dateien nach geplanter Änderung, reinem Kontext und Schutzstatus. Erst nach Nutzerfreigabe werden die Modify-Kandidaten als explizite <code>intendedFiles</code> an den Local Agent übergeben.</p>
       <div class="scope-grid">
         <article class="scope-card scope-card-allowed">
           <h3>Modify Candidates</h3>
           <ul>
-            <li><code>index.html</code> — Struktur, Inhalte und sichtbare Discovery-Buckets.</li>
-            <li><code>styles.css</code> — Layout, Karten, Statusfarben und responsive Zustände.</li>
+            <li><code>index.html</code> — strukturierter Diff für Struktur, Inhalte und sichtbare Discovery-Buckets.</li>
+            <li><code>styles.css</code> — strukturierter Diff für Layout, Karten, Statusfarben und responsive Zustände.</li>
           </ul>
         </article>
-        <article class="scope-card">
-          <h3>Context Only</h3>
+        <article class="scope-card scope-card-context">
+          <h3>Context-Inspected</h3>
           <ul>
-            <li><code>README.md</code> — Projektbeschreibung zur Orientierung; bleibt unverändert.</li>
+            <li><code>README.md</code> — Projektbeschreibung zur Orientierung; eigener Kontext-Bucket, niemals geplante Änderung.</li>
           </ul>
         </article>
         <article class="scope-card scope-card-locked">
@@ -55,7 +55,16 @@
         <li><span>1</span><p><strong>Scope approval:</strong> Der Nutzer bestätigt die erlaubten Modify-Dateien, bevor eine Vorschau startet.</p></li>
         <li><span>2</span><p><strong>Explicit handoff:</strong> Der Local Agent erhält nur die freigegebenen <code>intendedFiles</code>.</p></li>
         <li><span>3</span><p><strong>Dry-run first:</strong> Jede Änderung bleibt Preview, bis der Hub den Lauf verifiziert.</p></li>
+        <li><span>4</span><p><strong>Structured diffs:</strong> Jeder Modify-Kandidat erhält einen eigenen Diff; Kontextdateien werden nur referenziert.</p></li>
       </ol>
+      <div class="scope-handoff" aria-label="Local Agent Übergabe nach Freigabe">
+        <p class="handoff-label">Local Agent intendedFiles nach Approval</p>
+        <ul class="handoff-list">
+          <li><code>index.html</code></li>
+          <li><code>styles.css</code></li>
+        </ul>
+        <p>Preview und Write bleiben blockiert, bis der Hub den genehmigten Scope und den Dry-run geprüft hat.</p>
+      </div>
       <p class="scope-risk">Hinweis: Diese Discovery ist heuristisch; für höhere Sicherheit sollte ein Analyst-Lauf folgen.</p>
     </section>
     <section class="features" id="features" aria-labelledby="features-title">
