@@ -1,3 +1,0 @@
-alpha
-ANCHOR_LINE
-omega

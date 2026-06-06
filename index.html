@@ -13,7 +13,7 @@
     <div class="header-inner">
       <p class="logo">Mainsches Hub</p>
       <nav class="header-nav" aria-label="Seitennavigation">
-        <a href="#scope-discovery">Scope</a>
+        <a href="#scope-discovery">Discovery</a>
         <a href="#quality">Quality Gate</a>
         <a href="#features">Signale</a>
       </nav>
@@ -22,17 +22,17 @@
   <main id="inhalt">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-panel">
-        <p class="eyebrow">Live Patch v1 · Scope Discovery</p>
-        <h1 id="hero-title">Mainsches Hub Landingpage fuer genehmigte Local-Agent-Diffs</h1>
-        <p class="hero-lead">Ein hochwertiger Kontrollraum fuer Scope Approval, getrennte Discovery-Buckets und Dry-run-first Handoffs, bevor der Hub einen Schreibpfad freigibt.</p>
+        <p class="eyebrow">Live Patch v1 · Scope Discovery aktiv</p>
+        <h1 id="hero-title">Mainsches Hub Landingpage fuer Scope-gepruefte Local-Agent-Diffs</h1>
+        <p class="hero-lead">Ein hochwertiger Kontrollraum fuer Scope Approval, getrennte Discovery-Buckets und Dry-run-first Handoffs, bevor der Hub Preview oder Schreibpfad freigibt.</p>
         <div class="hero-actions" aria-label="Primaere Aktionen">
           <a class="cta-button" href="#scope-discovery">Scope Discovery starten</a>
           <a class="cta-button cta-button-secondary" href="#quality">Quality Gate ansehen</a>
         </div>
         <ul class="trust-strip" aria-label="Hub Kontrollpunkte">
-          <li><span>01</span>Human Approval zuerst</li>
-          <li><span>02</span>intendedFiles explizit</li>
-          <li><span>03</span>Verified Dry-run</li>
+          <li><span>01</span>Scope Approval zuerst</li>
+          <li><span>02</span>intendedFiles nach Freigabe</li>
+          <li><span>03</span>Verified Dry-run vor Write</li>
         </ul>
         <p class="execution-note">Local-Agent Preview bleibt gesperrt, bis der Modify-Scope freigegeben ist.</p>
       </div>
@@ -42,6 +42,18 @@
       <p class="section-kicker">Scope Discovery</p>
       <h2 id="scope-title">Accepted Buckets fuer diese Landingpage</h2>
       <p class="scope-intro">Die Landingpage macht sichtbar, welche Dateien als Modify-Kandidaten geplant sind, welche Datei nur Kontext liefert und dass der Local Agent erst nach Nutzerfreigabe explizite <code>intendedFiles</code> erhaelt.</p>
+      <div class="discovery-status" aria-label="Scope Discovery Status">
+        <div>
+          <span class="status-pill status-pill-pending">Awaiting Approval</span>
+          <h3>Landingpage-Scope ist entdeckt, aber noch nicht fuer Local Agent freigegeben</h3>
+          <p>Modify-Kandidaten bleiben Review-Material, bis der Nutzer <code>index.html</code> und <code>styles.css</code> als Scope bestaetigt.</p>
+        </div>
+        <ul class="status-checklist">
+          <li><strong>intendedFiles:</strong> erst nach Approval senden</li>
+          <li><strong>Dry-run:</strong> nach Freigabe verifizieren</li>
+          <li><strong>Write:</strong> bis verified Dry-run gesperrt</li>
+        </ul>
+      </div>
       <div class="scope-grid">
         <article class="scope-card scope-card-allowed">
           <p class="card-badge">Modify</p>
@@ -73,7 +85,7 @@
         <li><span>4</span><p><strong>Structured diffs:</strong> Jeder Modify-Kandidat besitzt einen eigenen Diff; Kontextdateien bleiben im separaten Bucket.</p></li>
       </ol>
       <div class="scope-handoff" aria-label="Local Agent Uebergabe nach Freigabe">
-        <p class="handoff-label">Local Agent intendedFiles nach Scope Approval</p>
+        <p class="handoff-label">Pending Local Agent intendedFiles nach Scope Approval</p>
         <ul class="handoff-list">
           <li><code>index.html</code></li>
           <li><code>styles.css</code></li>

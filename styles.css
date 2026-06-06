@@ -255,6 +255,63 @@ main {
   color: var(--muted);
 }
 
+.discovery-status {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr);
+  gap: 1rem;
+  align-items: start;
+  margin: 0 0 1.35rem;
+  padding: 1rem;
+  border: 1px solid rgba(119, 198, 255, 0.26);
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, rgba(119, 198, 255, 0.09), rgba(11, 13, 18, 0.48));
+}
+
+.discovery-status h3 {
+  margin: 0.55rem 0 0.45rem;
+  font-size: 1.05rem;
+}
+
+.discovery-status p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.status-pill {
+  display: inline-flex;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.status-pill-pending {
+  color: var(--blue);
+  background: rgba(119, 198, 255, 0.13);
+}
+
+.status-checklist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+}
+
+.status-checklist li {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(154, 163, 181, 0.14);
+}
+
+.status-checklist li:last-child {
+  border-bottom: 0;
+}
+
+.status-checklist strong {
+  color: var(--text);
+}
+
 .scope-grid {
   display: grid;
   gap: 1rem;
@@ -594,6 +651,7 @@ code {
 }
 
 @media (max-width: 899px) {
+  .discovery-status,
   .scope-grid,
   .quality-panel {
     grid-template-columns: 1fr;
