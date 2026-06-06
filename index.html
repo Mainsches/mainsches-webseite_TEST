@@ -22,78 +22,76 @@
   <main id="inhalt">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-panel">
-        <p class="eyebrow">Live Patch v1 · Patch-Producer Review</p>
-        <h1 id="hero-title">Mainsches Hub Test-Landingpage fuer verifizierte Local-Agent-Diffs</h1>
-        <p class="hero-lead">Ein hochwertiger Kontrollraum fuer Scope Approval, strukturierte Modify-Buckets und Dry-run-first Handoffs, bevor der Hub auch nur einen Schreibpfad freigibt.</p>
+        <p class="eyebrow">Live Patch v1 · Scope Discovery</p>
+        <h1 id="hero-title">Mainsches Hub Landingpage fuer genehmigte Local-Agent-Diffs</h1>
+        <p class="hero-lead">Ein hochwertiger Kontrollraum fuer Scope Approval, getrennte Discovery-Buckets und Dry-run-first Handoffs, bevor der Hub einen Schreibpfad freigibt.</p>
         <div class="hero-actions" aria-label="Primaere Aktionen">
-          <a class="cta-button" href="#scope-discovery">Scope pruefen</a>
+          <a class="cta-button" href="#scope-discovery">Scope Discovery starten</a>
           <a class="cta-button cta-button-secondary" href="#quality">Quality Gate ansehen</a>
         </div>
         <ul class="trust-strip" aria-label="Hub Kontrollpunkte">
           <li><span>01</span>Human Approval zuerst</li>
           <li><span>02</span>intendedFiles explizit</li>
-          <li><span>03</span>Dry-run vor Write</li>
+          <li><span>03</span>Verified Dry-run</li>
         </ul>
-        <p class="execution-note">Preview gesperrt, bis der freigegebene Modify-Scope strukturiert vorliegt.</p>
+        <p class="execution-note">Local-Agent Preview bleibt gesperrt, bis der Modify-Scope freigegeben ist.</p>
       </div>
     </section>
 
     <section class="scope-discovery" id="scope-discovery" aria-labelledby="scope-title">
-      <p class="section-kicker">Accepted Scope</p>
-      <h2 id="scope-title">Discovery-Buckets fuer diese Hub-Testseite</h2>
-      <p class="scope-intro">Die Landingpage zeigt klar, welche Dateien als Modify-Kandidaten geplant sind, welche Datei nur Kontext liefert und dass der Local Agent erst nach Nutzerfreigabe explizite <code>intendedFiles</code> erhaelt.</p>
+      <p class="section-kicker">Scope Discovery</p>
+      <h2 id="scope-title">Accepted Buckets fuer diese Landingpage</h2>
+      <p class="scope-intro">Die Landingpage macht sichtbar, welche Dateien als Modify-Kandidaten geplant sind, welche Datei nur Kontext liefert und dass der Local Agent erst nach Nutzerfreigabe explizite <code>intendedFiles</code> erhaelt.</p>
       <div class="scope-grid">
         <article class="scope-card scope-card-allowed">
           <p class="card-badge">Modify</p>
           <h3>Structured Diff Candidates</h3>
           <ul>
-            <li><code>index.html</code> — Struktur, Premium-Copy, Scope-Buckets und sichtbare Handoff-Signale.</li>
-            <li><code>styles.css</code> — Layout, hochwertige Oberflaechen, Statusfarben und responsive Zustaende.</li>
-            <li><code>agent-test.txt</code> — kleiner Kontrollmarker fuer den Patch-Producer-Durchlauf.</li>
+            <li><code>index.html</code> — strukturierter Diff fuer Copy, Scope-Buckets und Handoff-Signale.</li>
+            <li><code>styles.css</code> — strukturierter Diff fuer Layout, Statusfarben und responsive Zustaende.</li>
           </ul>
         </article>
         <article class="scope-card scope-card-context">
           <p class="card-badge">Context</p>
           <h3>Context-Inspected</h3>
           <ul>
-            <li><code>README.md</code> — Projektbeschreibung zur Orientierung; eigener Kontext-Bucket, niemals geplante Änderung.</li>
+            <li><code>README.md</code> — nur Projektorientierung; eigener Kontext-Bucket, niemals planned change.</li>
           </ul>
         </article>
         <article class="scope-card scope-card-locked">
           <p class="card-badge">Protected</p>
           <h3>Excluded Files</h3>
           <ul>
-            <li>Keine ausgeschlossenen Dateien fuer diesen v1-Patch-Produzentenlauf.</li>
+            <li><code>agent-test.txt</code> — ausgeschlossen und bleibt ausserhalb von Preview, Write und intendedFiles.</li>
           </ul>
         </article>
       </div>
       <ol class="discovery-steps" aria-label="Scope Discovery Ablauf">
-        <li><span>1</span><p><strong>Scope approval:</strong> Der Nutzer bestaetigt die erlaubten Modify-Dateien, bevor Preview oder Write denkbar werden.</p></li>
-        <li><span>2</span><p><strong>Explicit handoff:</strong> Der Local Agent erhaelt ausschliesslich freigegebene <code>intendedFiles</code>.</p></li>
+        <li><span>1</span><p><strong>Scope approval:</strong> Der Nutzer bestaetigt die erlaubten Modify-Dateien, bevor ein Local-Agent Preview oder Write startet.</p></li>
+        <li><span>2</span><p><strong>Explicit handoff:</strong> Der Local Agent erhaelt ausschliesslich die freigegebenen <code>intendedFiles</code>.</p></li>
         <li><span>3</span><p><strong>Dry-run first:</strong> Jede Aenderung bleibt Vorschau, bis der Hub den Lauf verifiziert.</p></li>
-        <li><span>4</span><p><strong>Structured diffs:</strong> Jeder Modify-Kandidat besitzt einen eigenen Diff; Kontextdateien bleiben getrennt referenziert.</p></li>
+        <li><span>4</span><p><strong>Structured diffs:</strong> Jeder Modify-Kandidat besitzt einen eigenen Diff; Kontextdateien bleiben im separaten Bucket.</p></li>
       </ol>
-      <div class="scope-handoff" aria-label="Local Agent Übergabe nach Freigabe">
-        <p class="handoff-label">Local Agent intendedFiles nach Approval</p>
+      <div class="scope-handoff" aria-label="Local Agent Uebergabe nach Freigabe">
+        <p class="handoff-label">Local Agent intendedFiles nach Scope Approval</p>
         <ul class="handoff-list">
           <li><code>index.html</code></li>
           <li><code>styles.css</code></li>
-          <li><code>agent-test.txt</code></li>
         </ul>
         <p>Preview und Write bleiben blockiert, bis der Hub den genehmigten Scope und den Dry-run geprueft hat.</p>
       </div>
-      <p class="scope-risk">Hinweis: Diese Discovery ist heuristisch; fuer hoehere Sicherheit sollte ein Analyst-Lauf folgen.</p>
+      <p class="scope-risk">Hinweis: Diese Discovery ist heuristisch und nutzt keinen Analysten; fuer hoehere Sicherheit sollte ein Analyst-Lauf folgen.</p>
     </section>
 
     <section class="quality-panel" id="quality" aria-labelledby="quality-title">
       <div>
         <p class="section-kicker">Hub Quality Gate</p>
-        <h2 id="quality-title">Premium-Testlanding mit sichtbarer Kontrolllogik</h2>
+        <h2 id="quality-title">Premium-Testlanding mit sichtbarer Scope-Kontrolle</h2>
         <p>Der Mainsches Hub positioniert diese Seite als saubere Demo fuer Review-Disziplin: getrennte Buckets, klare Freigaben und eine hochwertige visuelle Sprache fuer Stakeholder-Tests.</p>
       </div>
       <dl class="quality-metrics">
         <div>
-          <dt>3</dt>
+          <dt>2</dt>
           <dd>Modify-Kandidaten</dd>
         </div>
         <div>
@@ -101,8 +99,8 @@
           <dd>Context-Bucket</dd>
         </div>
         <div>
-          <dt>0</dt>
-          <dd>Protected Changes</dd>
+          <dt>1</dt>
+          <dd>Protected File</dd>
         </div>
       </dl>
     </section>
