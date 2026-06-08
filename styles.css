@@ -12,7 +12,6 @@
   --text: #e8eaef;
   --muted: #9aa3b5;
   --radius: 14px;
-  --mobile-gutter: clamp(0.85rem, 4vw, 1.25rem);
   --shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
   --shadow-gold: 0 24px 90px rgba(212, 175, 55, 0.14);
   --font: "Segoe UI", system-ui, -apple-system, sans-serif;
@@ -115,7 +114,7 @@ body::before {
 main {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 2.5rem var(--mobile-gutter) 3rem;
+  padding: 2.5rem 1.25rem 3rem;
 }
 
 .hero {
@@ -268,14 +267,6 @@ main {
   background: linear-gradient(135deg, rgba(119, 198, 255, 0.09), rgba(11, 13, 18, 0.48));
 }
 
-.discovery-status > *,
-.scope-card,
-.quality-panel > *,
-.feature-card,
-.cta-secondary-inner {
-  min-width: 0;
-}
-
 .discovery-status h3 {
   margin: 0.55rem 0 0.45rem;
   font-size: 1.05rem;
@@ -404,7 +395,6 @@ code {
   background: rgba(212, 175, 55, 0.12);
   color: var(--gold-bright);
   font-size: 0.92em;
-  word-break: break-word;
 }
 
 .discovery-steps {
@@ -678,31 +668,13 @@ code {
     flex-direction: column;
   }
 
-  .header-nav {
-    width: 100%;
-    flex-wrap: wrap;
-  }
-
-  .header-nav a {
-    flex: 1 1 auto;
-    text-align: center;
-  }
-
   .scope-discovery {
     padding: 1.35rem;
-  }
-
-  .scope-card {
-    padding: 1rem;
   }
 
   .trust-strip,
   .quality-metrics {
     grid-template-columns: 1fr;
-  }
-
-  .trust-strip li {
-    border-radius: var(--radius);
   }
 
   .discovery-steps li {
@@ -715,7 +687,7 @@ code {
   }
 
   .cta-secondary-section {
-    padding: 2rem var(--mobile-gutter);
+    padding: 2rem 1.1rem;
     margin-top: 2.25rem;
   }
 }
@@ -778,21 +750,21 @@ code {
   }
 
   main {
-    padding: 0.95rem 0.72rem 2rem;
+    padding: 1.2rem 0.85rem 2.25rem;
   }
 
   .hero {
-    padding: 0.85rem 0 1rem;
+    padding: 1rem 0 1.2rem;
   }
 
   .hero-panel {
-    padding: 1.35rem 0.9rem;
+    padding: 1.55rem 1rem;
     border-radius: calc(var(--radius) + 4px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.42);
   }
 
   .hero-panel::before {
-    display: none;
+    inset: 0.5rem;
+    border-radius: var(--radius);
   }
 
   .eyebrow,
@@ -801,8 +773,8 @@ code {
   }
 
   .hero h1 {
-    font-size: clamp(1.72rem, 11vw, 2.35rem);
-    line-height: 1.1;
+    font-size: clamp(1.85rem, 12vw, 2.55rem);
+    line-height: 1.08;
     overflow-wrap: anywhere;
   }
 
@@ -821,38 +793,17 @@ code {
 
   .cta-button {
     width: 100%;
-    padding: 0.82rem 0.9rem;
-    text-align: center;
-  }
-
-  .trust-strip {
-    gap: 0.55rem;
-  }
-
-  .trust-strip li {
-    display: flex;
-    align-items: center;
-    text-align: left;
-    padding: 0.72rem 0.78rem;
+    padding: 0.82rem 1rem;
   }
 
   .scope-discovery,
   .quality-panel,
   .feature-card {
-    padding: 0.9rem;
-    border-radius: var(--radius);
-  }
-
-  .scope-grid {
-    gap: 0.75rem;
+    padding: 1rem;
   }
 
   .discovery-status {
-    padding: 0.85rem;
-  }
-
-  .scope-card ul {
-    padding-left: 0.95rem;
+    padding: 0.9rem;
   }
 
   .discovery-steps li {
@@ -865,21 +816,7 @@ code {
     height: 1.65rem;
   }
 
-  .scope-handoff {
-    padding: 0.9rem;
-  }
-
-  .quality-metrics div {
-    padding: 0.85rem 0.7rem;
-  }
-
-  .cta-secondary-section {
-    margin-left: -0.1rem;
-    margin-right: -0.1rem;
-    border-radius: var(--radius);
-  }
-
   .site-footer {
-    padding: 1.45rem 0.9rem 2rem;
+    padding: 1.6rem 1rem 2.25rem;
   }
 }
