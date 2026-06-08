@@ -612,10 +612,10 @@ code {
   padding-top: 0.75rem;
   max-width: 42rem;
   border-top: 1px solid rgba(154, 163, 181, 0.14);
-  color: rgba(154, 163, 181, 0.78);
-  font-size: 0.76rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  color: rgba(154, 163, 181, 0.72);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
 }
 
 /* mainsches v1.4 — feature polish + secondary CTA */
